@@ -1,1 +1,12 @@
-srun --account=# --nodes=# --ntasks-per-node=# --output=out.%j --error=err.%j --time=##:##:## --partition=dc-cpu $HOME/##
+
+
+srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --output=out.%j --error=err.%j --time=[4]:[5]:[6] --partition=dc-cpu $HOME/[7]
+
+[1] project name
+[2] number of nodes, i.e. roughly speaking, number of "normal computer" or "laptop". Note that one node in Supercomputer has normally 2 sockets for CPU; hence, there are 2 CPUs on one node of Supercomputer. Meanwhile, one node of a personal computer has only 1 socket for CPU.
+[3] number of processes per node
+[4] hour
+[5] minute
+[6] second
+[7] path to file
+
