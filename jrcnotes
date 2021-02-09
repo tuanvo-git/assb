@@ -1,0 +1,1 @@
+srun --account=# --nodes=# --ntasks-per-node=# --output=out.%j --error=err.%j --time=##:##:## --partition=dc-cpu $HOME/##
