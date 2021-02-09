@@ -1,3 +1,3 @@
 # assb
-packages.yaml
+packages.yaml \\
 compilers.yaml
