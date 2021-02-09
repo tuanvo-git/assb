@@ -1,12 +1,30 @@
 
-
-srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --output=out.%j --error=err.%j --time=[4]:[5]:[6] --partition=dc-cpu $HOME/[7]
+#CPU option
+srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --output=out.%j --error=err.%j --time=[4]:[5]:[6] --partition=[7] $[8]
 
 [1] project name
-[2] number of nodes, i.e. roughly speaking, number of "normal computer" or "laptop". Note that one node in Supercomputer has normally 2 sockets for CPU; hence, there are 2 CPUs on one node of Supercomputer. Meanwhile, one node of a personal computer has only 1 socket for CPU.
+[2] number of nodes, i.e. roughly speaking, number of "personal computer" or "laptop". Note that one node in Supercomputer has normally 2 sockets for CPUs; hence, there are 2 CPUs on one node of Supercomputer. Meanwhile, one node of a personal computer has only 1 socket for 1 CPU.
 [3] number of processes per node
 [4] hour
 [5] minute
 [6] second
-[7] path to file
+[7] dc-cpu
+[8] path to the specific file which needs to be execute on supercomputer
 
+
+#GPU option
+srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --gres=gpu:[4] --output=out.%j --error=err.%j --time=[4]:[5]:[6] --partition=[7] $[8]
+
+[1] project name
+[2] number of nodes, i.e. roughly speaking, number of "personal computer" or "laptop". Note that one node in Supercomputer has normally 2 sockets for CPUs; hence, there are 2 CPUs on one node of Supercomputer. Meanwhile, one node of a personal computer has only 1 socket for 1 CPU.
+[3] number of processes per node
+[4] hour, max. 23
+[5] minute, max. 59
+[6] second, max. 59
+[7] dc-gpu
+[8] path to the specific file which needs to be execute on supercomputer
+[9] number of gpus used per node; gres stands for generic resource
+
+#Other notes
+--output=out.%j This will create a file with output information in the same directory; j stands for job ID
+--error=err.%j This will create a file with error information (if existed) in the same directory; j stands for job ID
