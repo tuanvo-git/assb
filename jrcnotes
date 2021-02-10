@@ -1,6 +1,6 @@
 
 #CPU option
-srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --output=out.%j --error=err.%j --time=[4]:[5]:[6] --partition=[7] $[8]
+srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --gres=[9] --output=out.%j --error=err.%j --time=[4]:[5]:[6] --partition=[7] $[8]
 
 [1] project name
 [2] number of nodes, i.e. roughly speaking, number of "personal computer" or "laptop". Note that one node in Supercomputer has normally 2 sockets for CPUs; hence, there are 2 CPUs on one node of Supercomputer. Meanwhile, one node of a personal computer has only 1 socket for 1 CPU.
@@ -10,6 +10,7 @@ srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --output=out.%j --error=err
 [6] second
 [7] dc-cpu
 [8] path to the specific file which needs to be execute on supercomputer
+[9] mem521 for standard/slim nodes at PS partition; mem1024 for large nodes at PL partition
 
 
 #GPU option
