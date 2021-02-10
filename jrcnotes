@@ -12,7 +12,10 @@ srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --gres=[9] --output=out.%j 
 [8] path to the specific file which needs to be execute on supercomputer
 [9] mem521 for standard/slim nodes at PS partition; mem1024 for large nodes at PL partition
 
+--gres=mem512 is by default
+-p dc-cpu-bigmem or --gres=mem1024
 
+#==============================================================================================================================================
 #GPU option
 srun --account=[1] --nodes=[2] --ntasks-per-node=[3] --gres=gpu:[4] --output=out.%j --error=err.%j --time=[4]:[5]:[6] --partition=[7] $[8]
 
