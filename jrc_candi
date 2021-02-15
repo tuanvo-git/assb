@@ -1,0 +1,17 @@
+#Setup requirements
+
+cmake-3.11.2-Linux-x86_64
+deal.II-v9.2.0
+hdf5-1.10.5
+oce-OCE-0.18.2
+OpenBLAS-0.3.7
+p4est-2.2
+parmetis-4.0.3
+petsc-3.13.1
+slepc-3.13.2
+trilinos-release-12-18-1
+
+#Execute
+cmake .
+make
+srun --account=<> --nodes=<> --ntasks-per-node=<> --output=out.%j --error=err.%j --time=<><>:<><>:<><> --partition=<> stepllzo
